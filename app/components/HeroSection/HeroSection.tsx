@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import Image from "next/image"
 import gsap from "gsap"
 import styles from "./Hero.module.css"
+
 import LogoMarquee from "@/app/components/Logo-scrolling/LogoMarquee"
 
 export default function Hero() {
@@ -35,7 +36,14 @@ export default function Hero() {
       <div className={styles.leftColumn}>
         <div className={styles.brandHeader}>
           <div className={styles.brandlogo}>
-            <img src="/images/logo.svg" alt="Logo" />
+           <Image
+               src="/images/logoWithname.png"
+               alt="Logo"
+               width={160}
+               height={40}
+               className={styles.logoImage}
+               priority
+             />
           </div>
           <div className={styles.brandTextGroup}>
             <span className={styles.brandNameLine}>rush.</span>

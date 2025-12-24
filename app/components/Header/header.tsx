@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import styles from "./Header.module.css"
+import Image from "next/image"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,13 +22,16 @@ export default function Header() {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <Link href="/" onClick={() => setIsOpen(false)}>
-            <img
-              src="/images/logoWithname.png"
-              alt="Logo"
-              className={styles.logoImage}
-            />
-          </Link>
+         <Link href="/" onClick={() => setIsOpen(false)}>
+  <Image
+    src="/images/logoWithname.png"
+    alt="Logo"
+    width={160}
+    height={40}
+    className={styles.logoImage}
+    priority
+  />
+</Link>
         </div>
 
         <div className={styles.navRight}>

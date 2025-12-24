@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import styles from "./Pacakages.module.css"
 
+import logo from "../../public/images/logo.svg"
+
 type ServicePlan = {
   name: string
   badge: string

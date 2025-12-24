@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -6,7 +7,14 @@ export default function Footer() {
     <div className={styles.footerWrapper}>
       <div className={styles.contentSection}>
         <div className={styles.brandGroup}>
-          <img src="/images/logo.svg" className={styles.logoImg} alt="Logo" />
+          <Image
+            src="/images/Logo.svg"
+            alt="Logo"
+            width={160}
+            height={48}
+            className={styles.logoImg}
+            priority
+          />
           <div className={styles.brandTitle}>
             <span>rush.</span>
             <span>web studio</span>
@@ -39,10 +47,22 @@ export default function Footer() {
 
         <div className={styles.socials}>
           <div className={styles.circle}>
-            <img src="/images/instagram.png" className={styles.socialIcon} alt="Instagram" />
+            <Image
+              src="/images/instagram.png"
+              alt="Instagram"
+              width={24}
+              height={24}
+              className={styles.socialIcon}
+            />
           </div>
           <div className={styles.circle}>
-            <img src="/images/likedin.png" className={styles.socialIcon} alt="LinkedIn" />
+            <Image
+              src="/images/likedin.png"
+              alt="LinkedIn"
+              width={24}
+              height={24}
+              className={styles.socialIcon}
+            />
           </div>
         </div>
       </div>
