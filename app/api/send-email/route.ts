@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     // 1. ADMIN NOTIFICATION (Sent to your cPanel email)
     await resend.emails.send({
       from: "Rush Web Studios <noreply@rushwebstudios.com>",
-      to: "admin@rushwebstudios.com", // Updated from Gmail to cPanel Email
+      to: "warda.dev.code@gmail.com", // Updated from Gmail to cPanel Email
       replyTo: email,
       subject: `🚀 New Lead: ${name} (${startupName})`,
       html: `

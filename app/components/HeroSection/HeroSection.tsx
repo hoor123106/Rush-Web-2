@@ -75,13 +75,6 @@ export default function Hero() {
             From UX ideas to technical implementation, they've nailed every detail."
           </p>
           <div className={styles.authorArea}>
-            <Image
-              src="/images/headerBoyImage.avif"
-              alt="Anton"
-              width={48}
-              height={48}
-              className={styles.authorAvatar}
-            />
             <div>
               <div className={styles.authorName}>Anton</div>
               <div className={styles.authorTitle}>Founder sonora, ex-PM of salesforce</div>
