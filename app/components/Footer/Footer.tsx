@@ -24,7 +24,7 @@ export default function Footer() {
         <div className={styles.ctaBox}>
           <h2 className={styles.ctaText}>
             Have an idea in<br />
-            mind?{" "}
+            mind?
             <Link href="/contact" className={`${styles.whiteText} ${styles.underline} ${styles.ctaLink}`}>
               Let&apos;s talk.
             </Link>
@@ -35,14 +35,9 @@ export default function Footer() {
       <hr className={styles.hr} />
 
       <div className={styles.bottomSection}>
-        <div className={styles.links}>
-          <span>ruhwebstudio</span>
-          <span>/websites</span>
-          <span>/motion</span>
-        </div>
 
         <div className={styles.copyright}>
-          Copyright 2026 © Weroast Design 2026. All Rights Reserved
+          Copyright 2026 © Rush Web Studio Design 2026. All Rights Reserved
         </div>
 
         <div className={styles.socials}>
