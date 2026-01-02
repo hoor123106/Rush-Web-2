@@ -2,6 +2,7 @@
   min-height: 100vh;
   padding: 48px 16px;
   max-width: 1818px;
+  background-color: #FFF9F5;
 }
 
 .wrapper {
@@ -45,13 +46,8 @@
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
   width: 248px;
   height: 47px;
-}
-
-.dropdownButton:hover {
-  background-color: #fef2f2;
 }
 
 .arrow {
@@ -71,7 +67,7 @@
   background-color: white;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   z-index: 10;
   overflow: hidden;
 }
@@ -86,17 +82,11 @@
   font-size: 18px;
   font-weight: 700;
   color: #3d0f0f;
-  transition: background-color 0.2s;
-}
-
-.dropdownItem:hover {
-  background-color: #f9fafb;
 }
 
 .dropdownItemActive {
   background-color: #fef2f2;
   color: #dc2626;
-  font-weight: 600;
 }
 
 .cardsGrid {
@@ -115,27 +105,18 @@
   max-width: 459px;
   height: 700px;
   border-radius: 24px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 24px 24px 0;
-  margin-bottom: 4px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 .badgeHeader {
-  margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 13px;
   border: 1px solid #e5e7eb;
-  width: fit-content;
   padding: 6px 16px;
   border-radius: 999px;
-  width: 246px;
+  width: fit-content;
+  margin: 24px 24px 12px;
 }
 
 .logoIcon {
@@ -180,86 +161,95 @@
 
 .featuresList {
   list-style: none;
-  padding: 12px 24px 0;
-  margin: 0 0 24px 0;
+  padding: 0 24px;
+  margin: 35px 0 20px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.featuresList::-webkit-scrollbar {
+  width: 14px;
+}
+
+.featuresList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.featuresList::-webkit-scrollbar-thumb {
+  background: #080838;
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+}
+
+.featuresList::-webkit-scrollbar-button:single-button {
+  background-color: #f1f1f1;
+  display: block;
+  background-size: 10px;
+  background-repeat: no-repeat;
+}
+
+.featuresList::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-position: center bottom;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23080838'><polygon points='50,0 0,100 100,100'/></svg>");
+}
+
+.featuresList::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-position: center top;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23080838'><polygon points='0,0 100,0 50,100'/></svg>");
 }
 
 .featureItem {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 10px;
   margin-bottom: 20px;
   font-weight: 500;
   font-size: 14px;
   color: #3d0f0f;
 }
 
-.checkIcon {
-  width: 16px;
-  height: 16px;
-  margin-top: 2px;
-  flex-shrink: 0;
+.bullet {
+  color: #D43241;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .buttonContainer {
   padding: 0 24px 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .buttonDark {
+  width: 100%;
+  max-width: 250px;
+  height: 46px;
   font-size: 16px;
   font-weight: 600;
   color: white;
   background-color: #7d1d1d;
   border-radius: 8px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
-  width: 100%;
-  max-width: 250px;
-  height: 46px;
-}
-
-.buttonDark:hover {
-  background-color: #6a1818;
 }
 
 .buttonOutline {
   width: 100%;
   max-width: 250px;
+  height: 46px;
   font-size: 16px;
   font-weight: 600;
-  height: 46px;
   color: #3d0f0f;
   background-color: white;
   border: 1px solid #790808;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.buttonOutline:hover {
-  background-color: #f9fafb;
 }
 
 @media (min-width: 1024px) {
   .cardsGrid {
     flex-direction: row;
     justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 976px;
-  }
-
-  .header {
-    font-size: 32px;
-    line-height: 39px;
-  }
-
-  .wrapper {
-    max-width: 912px;
-    padding: 9px;
+    gap: 30px;
   }
 }

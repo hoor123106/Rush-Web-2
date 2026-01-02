@@ -18,7 +18,6 @@
   align-items: center;
   gap: 40px;
   text-align: center;
-
 }
 
 .title {
@@ -34,6 +33,7 @@
   color: #BCA68B;
 }
 
+/* Isko 382px se kam karke 220px kar diya hai taake 2 tabs fit aayein */
 .tabsOuter {
   background-color: #FFFFFF;
   padding: 4px;
@@ -41,7 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 382px;
+  width: 220px;
   height: 38px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -49,13 +49,14 @@
 .tabList {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .tabButton {
   position: relative;
-  width: 98px;
+  flex: 1;
+  /* Dono buttons barabar jagah leinge */
   height: 30px;
   font-size: 13px;
   font-weight: 600;
@@ -86,8 +87,10 @@
   border-radius: 2px;
 }
 
+/* Table card ko width-wise control karne ke liye max-width lagayi hai */
 .tableCard {
   width: 100%;
+  max-width: 700px;
   background: white;
   border: 1px solid #edf2f7;
   border-radius: 20px;
@@ -148,9 +151,7 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    max-width: 382px;
     gap: 24px;
-    max-width: 976px;
   }
 
   .title {
@@ -159,6 +160,8 @@
 
   .tabsOuter {
     transform: scale(0.9);
+    width: 200px;
+    /* Mobile par mazeed chota */
   }
 
   .headerCell {

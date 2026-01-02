@@ -36,14 +36,14 @@ export default function Hero() {
       <div className={styles.leftColumn}>
         <div className={styles.brandHeader}>
           <div className={styles.brandlogo}>
-       <Image
-                 src="/images/Logo.svg"
-                 alt="Logo"
-                 width={160}
-                 height={48}
-                 className={styles.logoImg}
-                 priority
-               />
+            <Image
+              src="/images/Logo.svg"
+              alt="Logo"
+              width={160}
+              height={48}
+              className={styles.logoImg}
+              priority
+            />
           </div>
           <div className={styles.brandTextGroup}>
             <span className={styles.brandNameLine}>rush.</span>
@@ -59,13 +59,6 @@ export default function Hero() {
 
         <div className={styles.buttonGroup}>
           <button className={styles.primaryButton}>
-            <Image
-              src="/images/headerBoyImage.avif"
-              alt="Ziyan"
-              width={24}
-              height={24}
-              className={styles.avatarSmall}
-            />
             <span>Book a call with Rush</span>
           </button>
           <button className={styles.secondaryButton}>

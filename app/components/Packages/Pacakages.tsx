@@ -4,94 +4,221 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import styles from "./Pacakages.module.css"
 
-
-
-type ServicePlan = {
-  name: string
+type PlanDetails = {
   badge: string
   price: string
   originalPrice: string
   title: string
   features: string[]
-  icon: string
 }
 
-const servicePlans: Record<string, ServicePlan> = {
+type ServiceCategory = {
+  name: string
+  plans: PlanDetails[]
+}
+
+const servicePlans: Record<string, ServiceCategory> = {
   websites: {
     name: "Websites",
-    badge: "Startup Websites",
-    price: "$200",
-    originalPrice: "$400",
-    title: "High-converting SaaS websites in weeks, not months.",
-    icon: "/images/Logo.svg",
-    features: [
-      "Clear prices, No surprises",
-      "Responsive design for all devices",
-      "SEO optimized structure",
-      "Fast loading performance",
-      "Modern UI/UX design",
-      "Free hosting for 1 month",
+    plans: [
+      {
+        badge: "Startup Website",
+        price: "$200",
+        originalPrice: "$400",
+        title: "Startup Website Package",
+        features: [
+          "1-Page Website",
+          "Customized Design (basic)",
+          "WordPress",
+          "Contact Form",
+          "1 Banner Design (basic)",
+          "3 Revisions",
+          "Dedicated Project Manager",
+          "100% Satisfaction Guarantee",
+        ],
+      },
+      {
+        badge: "Professional Website",
+        price: "$400",
+        originalPrice: "$800",
+        title: "Professional Website Package",
+        features: [
+          "Up to 3-Page Website",
+          "Customized Design (Standard)",
+          "WordPress",
+          "Mobile Responsive",
+          "Hover Effects",
+          "Stock Photos",
+          "Contact Form",
+          "6 Revisions",
+          "Complete Design and Development",
+          "Dedicated Project Manager",
+          "100% Satisfaction Guarantee",
+        ],
+      },
     ],
   },
-  branding: {
-    name: "Branding",
-    badge: "Brand Identity",
-    price: "$350",
-    originalPrice: "$700",
-    title: "Complete brand identity that makes you stand out.",
-    icon: "/Logo.svg",
-    features: [
-      "Brand strategy & guidelines",
-      "Color palette & typography",
-      "Brand voice & messaging",
-      "Social media templates",
-      "Business card designs",
-      "Email signature templates",
+  ecommerce: {
+    name: "E-Commerce",
+    plans: [
+      {
+        badge: "E-Commerce Essential",
+        price: "$649",
+        originalPrice: "$1000",
+        title: "E-Commerce Essential Package",
+        features: [
+          "E-Commerce Website Design and Development",
+          "Basic Design",
+          "3 Banner Designs",
+          "4 Stock Photos",
+          "Hover Effects",
+          "Up to 70 Products",
+          "Up to 3 Categories",
+          "Content/Inventory Management System",
+          "Shopping Cart Integration",
+          "Payment Module Integration",
+          "Dedicated Project Manager",
+          "100% Ownership Rights",
+          "100% Satisfaction Guarantee",
+        ],
+      },
+      {
+        badge: "E-Commerce Standard",
+        price: "$849",
+        originalPrice: "$1600",
+        title: "E-commerce Standard Package",
+        features: [
+          "E-Commerce Website Design and Development",
+          "Standard Design",
+          "5 Banner Designs",
+          "Stock Photos",
+          "08 Revisions",
+          "Hover Effects",
+          "Up to 100 Products",
+          "Up to 5 Categories",
+          "Content/Inventory Management System",
+          "Shopping Cart Integration",
+          "Easy Product Search Bar",
+          "Payment Module Integration (2)",
+          "Direct Checkout",
+          "Search Engine Submission",
+          "Social Media Pages Integration",
+          "Dedicated Project Manager",
+          "100% Ownership Rights",
+          "100% Satisfaction Guarantee",
+        ],
+      },
     ],
   },
   logo: {
     name: "Logo Designing",
-    badge: "Professional Logo",
-    price: "$150",
-    originalPrice: "$300",
-    title: "Memorable logos that represent your brand perfectly.",
-    icon: "/Logo.svg",
-    features: [
-      "Multiple design concepts",
-      "Unlimited revisions",
-      "Vector files (AI, EPS, SVG)",
-      "High-resolution PNG & JPG",
-      "Social media versions",
-      "Favicon included",
+    plans: [
+      {
+        badge: "Professional Logo",
+        price: "$79",
+        originalPrice: "$79",
+        title: "Startup Logo Package",
+        features: [
+          "3 Logo Design Concepts",
+          "2 Dedicated Designer",
+          "6 Revisions",
+          "24 Hours Turn Around Time",
+          "Final Files (JPEG, PNG, PDF)",
+          "Dedicated Project Manager",
+          "100% Satisfaction Guarantee",
+        ],
+      },
+      {
+        badge: "Professional Logo",
+        price: "$150",
+        originalPrice: "$150",
+        title: "Silver Logo Package",
+        features: [
+          "5 Logo Design Concept",
+          "3 Dedicated Designers",
+          "10 Revisions",
+          "24 Hours Turn Around Time",
+          "Final Files (JPEG, PNG, PDF, PSD)",
+          "Dedicated Project Manager",
+          "100% Unique Concepts",
+          "100% Satisfaction Guarantee",
+        ],
+      },
     ],
   },
-  marketing: {
-    name: "Marketing",
-    badge: "Digital Marketing",
-    price: "$500",
-    originalPrice: "$1000",
-    title: "Complete marketing strategy to grow your business.",
-    icon: "/logo.svg",
-    features: [
-      "Social media management",
-      "Content creation & strategy",
-      "Email marketing campaigns",
-      "Analytics & reporting",
-      "Ad campaign management",
-      "Monthly performance reviews",
+  seo: {
+    name: "SEO",
+    plans: [
+      {
+        badge: "Digital Marketing",
+        price: "$250",
+        originalPrice: "$500",
+        title: "SEO Essential",
+        features: [
+          "5 Keywords",
+          "Off-page Optimization",
+          "Link Building",
+          "Social Bookmarking",
+          "Guaranteed Ranking on Google",
+          "Basic Analytical Report",
+          "Dedicated Project Manager",
+        ],
+      },
+      {
+        badge: "Digital Marketing",
+        price: "$500",
+        originalPrice: "$1000",
+        title: "SEO Standard",
+        features: [
+          "10 Keywords",
+          "Off-page Optimization",
+          "On-page Optimization",
+          "Link Building Social Bookmarking",
+          "Guaranteed Ranking on Google",
+          "Comprehensive Analytical Report",
+          "Dedicated Project Manager",
+        ],
+      },
+    ],
+  },
+  socialmedia: {
+    name: "Social Media",
+    plans: [
+      {
+        badge: "Digital Marketing",
+        price: "$125",
+        originalPrice: "$250",
+        title: "Social Media Presence",
+        features: [
+          "Social Business Account Creation (Any 3)",
+          "Cover Photo Design",
+          "Profile Picture Design",
+          "Welcome Post Design",
+        ],
+      },
+      {
+        badge: "Digital Marketing",
+        price: "$400",
+        originalPrice: "$800",
+        title: "Essential Monthly Package",
+        features: [
+          "2 Posting Per Week, Each Network",
+          "Content Generation",
+          "Post Design",
+          "Business Page Optimization",
+          "Social Media Calendar",
+          "Monthly Progress Report",
+          "Paid Boosting (Additional Charges)",
+        ],
+      },
     ],
   },
 }
 
 export default function PackagesSection() {
-  const [currentPlan, setCurrentPlan] = useState<ServicePlan>(servicePlans.websites)
   const [selectedService, setSelectedService] = useState("websites")
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    setCurrentPlan(servicePlans[selectedService])
-  }, [selectedService])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -99,18 +226,11 @@ export default function PackagesSection() {
         setIsDropdownOpen(false)
       }
     }
-    if (isDropdownOpen) {
-      document.addEventListener("mousedown", handleClickOutside)
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
+    if (isDropdownOpen) document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [isDropdownOpen])
 
-  const handleServiceChange = (service: string) => {
-    setSelectedService(service)
-    setIsDropdownOpen(false)
-  }
+  const activeCategory = servicePlans[selectedService]
 
   return (
     <div className={styles.container}>
@@ -122,14 +242,10 @@ export default function PackagesSection() {
         <div className={styles.dropdownWrapper}>
           <div className={styles.dropdownContainer} ref={dropdownRef}>
             <button className={styles.dropdownButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-              <span>{servicePlans[selectedService].name}</span>
+              <span>{activeCategory.name}</span>
               <svg
                 className={`${styles.arrow} ${isDropdownOpen ? styles.arrowOpen : ""}`}
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                width="20" height="20" viewBox="0 0 20 20" fill="none"
               >
                 <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -141,7 +257,10 @@ export default function PackagesSection() {
                   <button
                     key={key}
                     className={`${styles.dropdownItem} ${selectedService === key ? styles.dropdownItemActive : ""}`}
-                    onClick={() => handleServiceChange(key)}
+                    onClick={() => {
+                      setSelectedService(key)
+                      setIsDropdownOpen(false)
+                    }}
                   >
                     {servicePlans[key].name}
                   </button>
@@ -152,37 +271,29 @@ export default function PackagesSection() {
         </div>
 
         <div className={styles.cardsGrid}>
-          {[1, 2].map((i) => (
-            <div key={i} className={styles.card}>
-              <div>
-                <div className={styles.badge}>
-                  <div className={styles.badgeHeader}>
-                    <Image
-                      src="/images/Logo.svg"
-                      width={50}
-                      height={50}
-
-                      alt="Logo" className={styles.logoIcon}
-                      priority
-                    />
-                    <span className={styles.badgeText}>{currentPlan.badge}</span>
-                  </div>
-
+          {activeCategory.plans.map((plan, index) => (
+            <div key={index} className={styles.card}>
+              <div className={styles.cardTop}>
+                <div className={styles.badgeHeader}>
+                  <Image
+                    src="/images/Logo.svg"
+                    width={50} height={50}
+                    alt="Logo" className={styles.logoIcon}
+                  />
+                  <span className={styles.badgeText}>{plan.badge}</span>
                 </div>
 
                 <div className={styles.priceContainer}>
-                  <span className={styles.price}>{currentPlan.price}</span>
-                  <span className={styles.originalPrice}>{currentPlan.originalPrice}</span>
+                  <span className={styles.price}>{plan.price}</span>
+                  <span className={styles.originalPrice}>{plan.originalPrice}</span>
                 </div>
 
-                <h2 className={styles.packagesTitle}>{currentPlan.title}</h2>
+                <h2 className={styles.packagesTitle}>{plan.title}</h2>
 
                 <ul className={styles.featuresList}>
-                  {currentPlan.features.map((feature, index) => (
-                    <li key={index} className={styles.featureItem}>
-                      <svg className={styles.checkIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                  {plan.features.map((feature, fIndex) => (
+                    <li key={fIndex} className={styles.featureItem}>
+                      <span className={styles.bullet}>•</span>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -190,7 +301,9 @@ export default function PackagesSection() {
               </div>
 
               <div className={styles.buttonContainer}>
-                <button className={i === 1 ? styles.buttonDark : styles.buttonOutline}>Activate Now</button>
+                <button className={index === 0 ? styles.buttonDark : styles.buttonOutline}>
+                  Activate Now
+                </button>
               </div>
             </div>
           ))}

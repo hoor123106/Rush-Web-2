@@ -3,34 +3,19 @@
 import { useState } from "react"
 import styles from "./Delivery.module.css"
 
-type ServiceTab = "Web Apps" | "Websites" | "Motion" | "Branding"
+type ServiceTab = "Websites" | "Branding"
 
 export default function Delivery() {
-  const [activeTab, setActiveTab] = useState<ServiceTab>("Web Apps")
+  const [activeTab, setActiveTab] = useState<ServiceTab>("Websites")
 
-  const tabs: ServiceTab[] = ["Web Apps", "Websites", "Motion", "Branding"]
+  const tabs: ServiceTab[] = ["Websites", "Branding"]
 
-  const servicesData: Record<
-    ServiceTab,
-    { service: string; timeframe: string }[]
-  > = {
-    "Web Apps": [
-      { service: "MVP web app", timeframe: "2-10 weeks" },
-      { service: "MVP mobile app", timeframe: "2-8 weeks" },
-      { service: "New feature sprint", timeframe: "min. 1 week" },
-      { service: "Design system", timeframe: "min 10 days" },
-    ],
+  const servicesData: Record<ServiceTab, { service: string; timeframe: string }[]> = {
     Websites: [
       { service: "Landing page", timeframe: "1-2 weeks" },
       { service: "Marketing website", timeframe: "3-6 weeks" },
       { service: "E-commerce site", timeframe: "4-8 weeks" },
       { service: "Website redesign", timeframe: "2-4 weeks" },
-    ],
-    Motion: [
-      { service: "Explainer video", timeframe: "2-3 weeks" },
-      { service: "Product demo", timeframe: "1-2 weeks" },
-      { service: "Animation set", timeframe: "1-2 weeks" },
-      { service: "Micro-interactions", timeframe: "3-5 days" },
     ],
     Branding: [
       { service: "Brand identity", timeframe: "4-6 weeks" },
@@ -62,6 +47,7 @@ export default function Delivery() {
           </div>
         </div>
 
+        {/* Table card ab width auto lega */}
         <div className={styles.tableCard}>
           <div className={styles.tableHeader}>
             <div className={styles.headerCell}>Service</div>

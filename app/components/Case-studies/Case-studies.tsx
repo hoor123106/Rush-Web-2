@@ -3,18 +3,18 @@ import styles from "./CaseStudy.module.css";
 const cases = [
   {
     id: 1,
-    title: "Pulse",
-    caseImage: "/images/case1.png",
+    title: "Clarion Calls",
+    caseImage: "/images/Cases1.png",
     testimonialImage: "/images/testimonail1.png",
     brandLogo: "/images/junnie.png",
-    quote: "We Roast roasted our old UI and built us an intelligently thought out user sign up process and user interface that converts. Extremely high quality!",
+    quote: "Rush Web Studio designed our old UI and built us an intelligently thought out Website that actually converts. Extremely high quality!",
     author: "Ben Williams",
     role: "Co-Founder of Pulse"
   },
   {
     id: 2,
-    title: "EcoSmart",
-    caseImage: "/images/case2.png",
+    title: "CapsHock",
+    caseImage: "/images/Cases2.png",
     testimonialImage: "/images/testimonail2.png",
     brandLogo: "/images/junnie.png",
     quote: "The design team understood our vision perfectly. The new interface is not only beautiful but has significantly improved our user retention.",
@@ -23,11 +23,11 @@ const cases = [
   },
   {
     id: 3,
-    title: "Vividly",
-    caseImage: "/images/case3.png",
+    title: "HouseRush",
+    caseImage: "/images/Cases3.png",
     testimonialImage: "/images/testimonail3.png",
     brandLogo: "/images/junnie.png",
-    quote: "Professional, fast, and creative. They transformed our messy dashboard into a clean and intuitive workspace for our entire global team.",
+    quote: "Professional, fast, and creative. They transformed our messy dashboard into a clean and intuitive Website for our entire global team.",
     author: "Michael Chen",
     role: "Lead Developer"
   }
