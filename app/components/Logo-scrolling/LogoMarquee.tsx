@@ -28,7 +28,7 @@ export default function LogoMarquee() {
     { src: "/images/junnie.png", alt: "Jullie" },
     { src: "/images/captainsWarehare.png", alt: "Captains" },
     { src: "/images/Comfycozy.png", alt: "Comfycozy" },
-    { src: "/images/staeerEats.png", alt: "Staeer Eats" },
+    { src: "/images/streetEats.png", alt: "Staeer Eats" },
     { src: "/images/Pitchputch.png", alt: "Pitchputch" },
     { src: "/images/carlon.png", alt: "Carlon" },
   ]

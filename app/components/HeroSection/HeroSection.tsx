@@ -4,14 +4,20 @@ import { useEffect, useRef } from "react"
 import Image from "next/image"
 import gsap from "gsap"
 import styles from "./Hero.module.css"
-
 import LogoMarquee from "@/app/components/Logo-scrolling/LogoMarquee"
+
+const scrollToCall = () => {
+  const callToAction = document.getElementById('book-call');
+  if (callToAction) {
+    callToAction.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 export default function Hero() {
   const projectScrollRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     if (!projectScrollRef.current) return
-
     const ctx = gsap.context(() => {
       gsap.to(projectScrollRef.current, {
         xPercent: -50,
@@ -20,15 +26,19 @@ export default function Hero() {
         ease: "linear",
       })
     })
-
     return () => ctx.revert()
   }, [])
 
-
   const projectSlides = [
-    { id: 1, src: "/images/project1.png", color: "#FF9E67" },
-    { id: 2, src: "/images/project2.png", color: "#FFF27A" },
-    { id: 3, src: "/images/project3.avif", color: "#C7CAE6" },
+    { id: 1, src: "/images/project-1.png", color: "#FF9E67" },
+    { id: 9, src: "/images/Project9Last.png", color: "#4FDFC5" },
+    { id: 2, src: "/images/project-2.png", color: "#C8A5FF" },
+    { id: 3, src: "/images/project-3.png", color: "#F7B777" },
+    { id: 4, src: "/images/project-4.png", color: "#5853FC" },
+    { id: 5, src: "/images/project-5.png", color: "#FFE68E" },
+    { id: 6, src: "/images/project-6.png", color: "#759583" },
+    { id: 7, src: "/images/project-7.png", color: "#BD5FEC" },
+    { id: 8, src: "/images/Project-8.png", color: "red" },
   ]
 
   return (
@@ -58,12 +68,13 @@ export default function Hero() {
         </p>
 
         <div className={styles.buttonGroup}>
-          <button className={styles.primaryButton}>
+          <button className={styles.primaryButton} onClick={scrollToCall}>
             <span>Book a call with Rush</span>
           </button>
-          <button className={styles.secondaryButton}>
+
+          <button className={styles.secondaryButton} onClick={scrollToCall}>
             <Image src="/images/mail.png" alt="Mail" width={20} height={20} />
-            <span>Quick Mail</span>
+            <span>Contact Now</span>
           </button>
         </div>
 
@@ -71,17 +82,26 @@ export default function Hero() {
 
         <div className={styles.testimonialCard}>
           <p className={styles.testimonialText}>
-            "Working with them has been effortless. They're sharp, proactive, and genuinely invested in our success.
-            From UX ideas to technical implementation, they've nailed every detail."
+            Working with Rushweb Studio has been a transformative experience for our business. Their strategic approach to digital branding has significantly increased our conversion and engagement.
           </p>
           <div className={styles.authorArea}>
-            <div>
-              <div className={styles.authorName}>Anton</div>
-              <div className={styles.authorTitle}>Founder sonora, ex-PM of salesforce</div>
+            <div className={styles.authorAvatar}>
+              <Image
+                src="/images/testimonial5.webp"
+                alt="Sarah Johnson"
+                width={48}
+                height={48}
+                className={styles.avatarImg}
+              />
+            </div>
+            <div className={styles.authorInfo}>
+              <div className={styles.authorName}>Sarah Johnson</div>
+              <div className={styles.authorTitle}>Marketing Director</div>
             </div>
           </div>
         </div>
       </div>
+
       <div className={styles.rightColumn}>
         <div className={styles.projectTrack} ref={projectScrollRef}>
           {[...projectSlides, ...projectSlides].map((project, index) => (

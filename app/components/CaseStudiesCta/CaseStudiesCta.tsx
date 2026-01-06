@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./CaseStudiesCta.module.css";
 
 export default function CaseStudyComponent() {
@@ -11,14 +12,14 @@ export default function CaseStudyComponent() {
               alt="Case Study"
               className={styles.mainImage}
             />
-            <button className={styles.caseButton}>
+            <Link href="/case-studies" className={styles.caseButton}>
               See all case Studies
               <img
                 src="/images/ArrowLeft.png"
                 alt="arrow"
                 className={styles.buttonIcon}
               />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

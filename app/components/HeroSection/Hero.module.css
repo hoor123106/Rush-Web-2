@@ -128,10 +128,22 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: 40px;
 }
 
 .authorAvatar {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #f3f4f6;
+}
+
+.authorAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .authorName {
@@ -179,6 +191,8 @@
     padding: 40px 47px;
     margin-right: 0;
     max-width: 976px;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
   }
 
   .buttonGroup {

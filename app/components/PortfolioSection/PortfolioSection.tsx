@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./PortfolioSection.module.css";
+import Link from "next/link";
 
 export default function PortfolioSection() {
   const [isHovered, setIsHovered] = useState(false);
@@ -25,7 +26,7 @@ export default function PortfolioSection() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <div className={styles.portfolioBtnContent}>
+            <Link href="/case-studies" className={styles.portfolioBtnContent}>
               <Image src="/images/figma.png" alt="Figma" width={18} height={28} />
               <span>See all Case Studies</span>
               <Image
@@ -36,7 +37,7 @@ export default function PortfolioSection() {
                 className={`${styles.portfolioArrowIcon} ${isHovered ? styles.portfolioArrowHovered : ""
                   }`}
               />
-            </div>
+            </Link>
           </button>
         </div>
 

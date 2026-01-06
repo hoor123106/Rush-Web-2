@@ -5,7 +5,6 @@
   align-items: center;
   margin-bottom: 20px;
   margin-top: 50px;
-  border-top: 1px solid #e5e7eb;
 }
 
 .caseContainer {
@@ -136,7 +135,7 @@
 .avatar {
   width: 35px;
   height: 35px;
-  border-radius: 50px;
+  border-radius: 20px;
   overflow: hidden;
 }
 

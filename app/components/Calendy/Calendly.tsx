@@ -19,7 +19,7 @@ export default function CalendarSection() {
   }, []);
 
   return (
-    <section className={styles.calOuterDiv}>
+    <section className={styles.calOuterDiv} id="book-call">
       <div className={styles.calInnerDiv}>
         <h2 className={styles.mainHeading}>
           Book a <span className={styles.redText}>call</span> or Fill the <span className={styles.goldText}>form</span>

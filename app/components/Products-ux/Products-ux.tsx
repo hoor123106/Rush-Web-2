@@ -1,22 +1,28 @@
 "use client"
-    import Image from "next/image"
+import Image from "next/image"
 import styles from "./ProductUx.module.css"
 
 export default function ProductUXPage() {
+  const scrollToCall = () => {
+    const callToAction = document.getElementById('book-call');
+    if (callToAction) {
+      callToAction.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.card}>
 
           <div className={styles.Productsheader}>
-          <Image
-                      src="/images/Logo.svg"
-                      width={50}
-                      height={50}
+            <Image
+              src="/images/Logo.svg"
+              width={50}
+              height={50}
 
-                      alt="Logo" 
-                    
-                    className={styles.logoIcon} />
+              alt="Logo"
+
+              className={styles.logoIcon} />
             <span className={styles.brandName}>rush web studio</span>
           </div>
 
@@ -43,7 +49,7 @@ export default function ProductUXPage() {
             </div>
           </div>
 
-          <button className={styles.Productsbutton}>Book call with Rush</button>
+          <button onClick={scrollToCall} className={styles.Productsbutton}>Book call with Rush</button>
         </div>
       </div>
     </div>

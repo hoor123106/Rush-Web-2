@@ -4,32 +4,32 @@ const cases = [
   {
     id: 1,
     title: "Clarion Calls",
-    caseImage: "/images/Cases1.png",
-    testimonialImage: "/images/testimonail1.png",
-    brandLogo: "/images/junnie.png",
-    quote: "Rush Web Studio designed our old UI and built us an intelligently thought out Website that actually converts. Extremely high quality!",
-    author: "Ben Williams",
-    role: "Co-Founder of Pulse"
+    caseImage: "/images/case-1.png",
+    testimonialImage: "/images/testimonial1.webp",
+    brandLogo: "/images/carlon.png",
+    quote: "The team at Rushweb Studio truly understands our vision and has helped us create a website that perfectly represents our brand. Their attention to detail and commitment to excellence is unmatched.",
+    author: "David Thompson",
+    role: "CEO, Tech Startup"
   },
   {
     id: 2,
-    title: "CapsHock",
-    caseImage: "/images/Cases2.png",
-    testimonialImage: "/images/testimonail2.png",
-    brandLogo: "/images/junnie.png",
-    quote: "The design team understood our vision perfectly. The new interface is not only beautiful but has significantly improved our user retention.",
-    author: "Sarah Jenkins",
-    role: "Marketing Director"
+    title: "Music City",
+    caseImage: "/images/case-2.png",
+    testimonialImage: "/images/testimonial2.webp",
+    brandLogo: "/images/streetEats.png",
+    quote: "Professional, punctual, and results-driven. Rushweb Studio has been our go-to agency for all things digital.",
+    author: "James Wilson",
+    role: "Operations Head"
   },
   {
     id: 3,
-    title: "HouseRush",
-    caseImage: "/images/Cases3.png",
-    testimonialImage: "/images/testimonail3.png",
+    title: "Jonnie",
+    caseImage: "/images/case-3.png",
+    testimonialImage: "/images/testimonial3.webp",
     brandLogo: "/images/junnie.png",
-    quote: "Professional, fast, and creative. They transformed our messy dashboard into a clean and intuitive Website for our entire global team.",
-    author: "Michael Chen",
-    role: "Lead Developer"
+    quote: "Rushweb Studio creative team brought our product to life. Their branding strategy helped us stand out in a crowded market.",
+    author: "Emily Carter",
+    role: "Product Manager"
   }
 ];
 
