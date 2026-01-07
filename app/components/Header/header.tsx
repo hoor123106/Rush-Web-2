@@ -62,7 +62,13 @@ export default function Header() {
           </Link>
 
           <button className={styles.primaryButton} onClick={scrollToCall}>
-            <Image src="/images/calender.webp" alt="Calendar" width={20} height={20} className={styles.buttonIcon} />
+            <Image
+              src="/images/calender.webp"
+              alt="Calendar"
+              width={20}
+              height={20}
+              className={styles.buttonIcon}
+            />
             <span className={styles.buttonText}>Book call with Rush</span>
           </button>
         </div>
@@ -103,7 +109,7 @@ export default function Header() {
                   Lets Chat <Linkedin size={20} color="#1a1a1a" />
                 </button>
                 <button className={styles.mobileFounderButton} onClick={scrollToCall}>
-                  <Image src="/images/calender.webp" alt="Calendar" width={18} height={18} className={styles.mobileIcon} />
+                  <Image src="/images/calender.webp" alt="Calendar" width={18} height={18} />
                   <span>Talk to Founder</span>
                 </button>
               </div>

@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 0.5px solid #e5e7eb;
   background-color: white;
 }
 
@@ -20,9 +20,9 @@
 .navRight {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   padding: 4px 8px;
-  border: 1px solid #A6A6A6;
+  border: 0.5px solid #e5e7eb;
   background-color: #FFF9F5;
   border-radius: 12px;
 }
@@ -36,8 +36,7 @@
   font-weight: 600;
   color: #1a1a1a;
   transition: 0.2s ease;
-  border: 1px solid transparent;
-  /* Added to keep size consistent */
+  border: 0.5px solid transparent;
 }
 
 .navLink:hover {
@@ -51,41 +50,39 @@
   justify-content: center;
   width: 38px;
   height: 38px;
-  background-color: #ffffff;
-  border: 1px solid #28282F;
+  /* background-color: #ffffff; */
+  border: 0.5px solid #e5e7eb;
   border-radius: 10px;
-  transition: 0.2s ease;
-  box-sizing: border-box;
-  /* Ensures border doesn't add to width */
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.socialButton:hover {
-  background-color: #f3f4f6;
+.socialIcon {
+  color: grey;
+  transition: color 0.3s ease;
 }
 
 .primaryButton {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(90deg, #040404 0%, #500109 50%, #040404 100%);
-  color: #ffffff;
+  color: black;
   border-radius: 8px;
   height: 38px;
   padding: 0 20px;
   font-weight: 600;
-  border: 1px solid transparent;
-  /* Crucial: Added transparent border by default */
+  border: 0.5px solid #790808;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.3s ease;
   box-sizing: border-box;
+  background: #FFF9F5;
 }
 
 .primaryButton:hover {
-  background: #FFF9F5 !important;
-  color: #000000;
-  border: 1px solid #790808;
-  /* Border is now just changing color, not size */
+  background: linear-gradient(90deg, #040404 0%, #500109 50%, #040404 100%) !important;
+  color: white !important;
+  border-color: transparent;
 }
 
 .hamburger {
@@ -113,7 +110,6 @@
   padding: 40px 24px;
   gap: 40px;
   align-items: center;
-  text-align: center;
 }
 
 .mobileLinks {
@@ -141,7 +137,7 @@
 .mobileChatButton {
   width: 100%;
   height: 52px;
-  border: 1px solid #e5e7eb;
+  border: 0.5px solid #e5e7eb;
   background: #ffffff;
   border-radius: 12px;
   font-weight: 600;
@@ -158,7 +154,7 @@
   border-radius: 12px;
   color: white;
   font-weight: 600;
-  border: 1px solid transparent;
+  border: 0.5px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
