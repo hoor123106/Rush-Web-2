@@ -10,8 +10,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 30px 20px 15px 55px;
+  gap: 0.75rem;
+  padding: 50px 20px 30px 55px;
   border-right: 1px solid #e5e7eb;
   overflow: hidden;
   position: relative;
@@ -20,18 +20,18 @@
 
 .rightColumn {
   flex: 1.8;
-  padding: 7rem 40px;
+  padding-top: 30px;
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .brandHeader {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-
+  margin-bottom: 0.5rem;
 }
 
 .brandlogo img {
@@ -59,6 +59,7 @@
   font-family: sans-serif;
   letter-spacing: -0.04em;
   color: #3d0309;
+  margin-bottom: 0.5rem;
 }
 
 .highlightText {
@@ -70,12 +71,15 @@
   color: #000000;
   line-height: 1.6;
   font-weight: 400;
+  max-width: 480px;
+  margin-bottom: 1rem;
 }
 
 .buttonGroup {
   display: flex;
   gap: 1rem;
   flex-wrap: nowrap;
+  margin-top: 0.5rem;
 }
 
 .primaryButton {
@@ -111,26 +115,34 @@
   color: #000000;
 }
 
+.marqueeWrapper {
+  margin-top: -10px;
+  margin-bottom: -15px;
+}
+
 .testimonialCard {
   background-color: #ffffff;
   border-radius: 20px;
   border: 1px solid #e6e6e6;
   padding: 24px;
   width: 100%;
+  max-width: 450px;
+  margin-top: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .testimonialText {
   font-size: 16px;
   line-height: 1.6;
   color: #000000;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .authorArea {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .authorAvatar {
@@ -162,15 +174,17 @@
 
 .projectTrack {
   display: flex;
-  gap: 32px;
+  gap: 12px;
   width: max-content;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .projectCard {
   flex-shrink: 0;
   border-radius: 24px;
-  padding: 24px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
 }
 
 .projectImageWrapper {
@@ -190,30 +204,15 @@
   }
 
   .leftColumn {
-    padding: 40px 47px;
+    padding: 40px 30px;
     margin-right: 0;
     max-width: 976px;
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
   }
 
-  .buttonGroup {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .primaryButton,
-  .secondaryButton {
-    width: 240px;
-    height: 48px;
-    justify-content: center;
-    padding: 0 24px;
-  }
-}
-
-@media (max-width: 644px) {
-  .leftColumn {
-    padding: 32px 30px;
+  .rightColumn {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }

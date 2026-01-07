@@ -14,7 +14,7 @@ const scrollToCall = () => {
 };
 
 export default function Hero() {
-  const projectScrollRef = useRef<HTMLDivElement>(null)
+  const projectScrollRef = useRef(null)
 
   useEffect(() => {
     if (!projectScrollRef.current) return
@@ -22,8 +22,8 @@ export default function Hero() {
       gsap.to(projectScrollRef.current, {
         xPercent: -50,
         repeat: -1,
-        duration: 20,
-        ease: "linear",
+        duration: 45,
+        ease: "none",
       })
     })
     return () => ctx.revert()
@@ -46,14 +46,7 @@ export default function Hero() {
       <div className={styles.leftColumn}>
         <div className={styles.brandHeader}>
           <div className={styles.brandlogo}>
-            <Image
-              src="/images/Logo.svg"
-              alt="Logo"
-              width={160}
-              height={48}
-              className={styles.logoImg}
-              priority
-            />
+            <Image src="/images/Logo.svg" alt="Logo" width={160} height={48} className={styles.logoImg} priority />
           </div>
           <div className={styles.brandTextGroup}>
             <span className={styles.brandNameLine}>rush.</span>
@@ -73,32 +66,27 @@ export default function Hero() {
           <button className={styles.primaryButton} onClick={scrollToCall}>
             <span>Book a call with Rush</span>
           </button>
-
           <button className={styles.secondaryButton} onClick={scrollToCall}>
             <Image src="/images/mail.png" alt="Mail" width={20} height={20} />
-            <span>Contact Now</span>
+            <span>Quick Mail</span>
           </button>
         </div>
 
-        <LogoMarquee />
+        <div className={styles.marqueeWrapper}>
+          <LogoMarquee />
+        </div>
 
         <div className={styles.testimonialCard}>
           <p className={styles.testimonialText}>
-            Working with Rushweb Studio has been a transformative experience for our business. Their strategic approach to digital branding has significantly increased our conversion and engagement.
+            "Working with them has been effortless. They're sharp, proactive, and genuinely invested in our success. From UX ideas to technical implementation, they've nailed every detail."
           </p>
           <div className={styles.authorArea}>
             <div className={styles.authorAvatar}>
-              <Image
-                src="/images/testimonial5.webp"
-                alt="Sarah Johnson"
-                width={48}
-                height={48}
-                className={styles.avatarImg}
-              />
+              <Image src="/images/testimonial5.webp" alt="Anton" width={48} height={48} className={styles.avatarImg} />
             </div>
             <div className={styles.authorInfo}>
-              <div className={styles.authorName}>Sarah Johnson</div>
-              <div className={styles.authorTitle}>Marketing Director</div>
+              <div className={styles.authorName}>Anton</div>
+              <div className={styles.authorTitle}>Founder sonora, ex-PM of salesforce</div>
             </div>
           </div>
         </div>
@@ -107,20 +95,9 @@ export default function Hero() {
       <div className={styles.rightColumn}>
         <div className={styles.projectTrack} ref={projectScrollRef}>
           {[...projectSlides, ...projectSlides].map((project, index) => (
-            <div
-              key={index}
-              className={styles.projectCard}
-              style={{ backgroundColor: project.color }}
-            >
+            <div key={index} className={styles.projectCard} style={{ backgroundColor: project.color }}>
               <div className={styles.projectImageWrapper}>
-                <Image
-                  src={project.src}
-                  alt={`Project ${project.id}`}
-                  width={500}
-                  height={700}
-                  className={styles.projectImage}
-                  priority
-                />
+                <Image src={project.src} alt={`Project ${project.id}`} width={550} height={700} className={styles.projectImage} priority />
               </div>
             </div>
           ))}

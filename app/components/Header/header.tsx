@@ -3,12 +3,19 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Instagram, Facebook } from "lucide-react"
 import styles from "./Header.module.css"
 import Image from "next/image"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+
+  const scrollToCall = () => {
+    const callToAction = document.getElementById('book-call');
+    if (callToAction) {
+      callToAction.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -18,33 +25,48 @@ export default function Header() {
     }
   }, [isOpen])
 
+
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-         <Link href="/" onClick={() => setIsOpen(false)}>
-  <Image
-    src="/images/logoWithname.png"
-    alt="Logo"
-    width={160}
-    height={40}
-    className={styles.logoImage}
-    priority
-  />
-</Link>
+          <Link href="/" onClick={() => setIsOpen(false)}>
+            <Image
+              src="/images/logoWithname.png"
+              alt="Logo"
+              width={160}
+              height={40}
+              className={styles.logoImage}
+              priority
+            />
+          </Link>
         </div>
 
         <div className={styles.navRight}>
-          <button className={styles.navLink}>Work</button>
+          <Link href="/case-studies" className={styles.navLink}>
+            Cases
+          </Link>
+
           <button className={styles.navLink}>
             <span>Resources</span>
             <span className={styles.badge}>new</span>
           </button>
-          <button className={styles.xButton}>
-            <img src="/images/Twitter.svg" alt="X" className={styles.xIcon} />
-          </button>
+
+          <Link href="https://x.com" aria-label="X">
+            <img src="/images/Twitter.svg" alt="X" className={styles.socialIconImg} />
+          </Link>
+
+          <Link href="https://instagram.com" className={styles.socialButton} aria-label="Instagram">
+            <Instagram size={20} color="#1a1a1a" />
+          </Link>
+
+          <Link href="https://facebook.com" className={styles.socialButton} aria-label="Facebook">
+            <Facebook size={20} color="#1a1a1a" />
+          </Link>
+
           <button className={styles.primaryButton}>
-            <span className={styles.buttonText}>Book call with Rush</span>
+            <span onClick={scrollToCall} className={styles.buttonText}>Book call with Rush</span>
           </button>
         </div>
 
@@ -82,7 +104,9 @@ export default function Header() {
               className={styles.mobileContentWrapper}
             >
               <div className={styles.mobileLinks}>
-                <button className={styles.mobileNavLink}>Work</button>
+                <Link href="/case-studies" className={styles.mobileNavLink} onClick={() => setIsOpen(false)}>
+                  Cases
+                </Link>
                 <button className={styles.mobileNavLink}>
                   <span>Resources</span>
                   <span className={styles.badge}>new</span>
@@ -96,7 +120,6 @@ export default function Header() {
 
                 <button className={styles.mobileFounderButton}>
                   Talk to Founder
-                  {/* <img src="/images/google-meet.png" alt="Meet" className={styles.meetIcon} /> */}
                 </button>
               </div>
             </motion.div>
