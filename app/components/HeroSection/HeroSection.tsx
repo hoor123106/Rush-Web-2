@@ -61,7 +61,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <h1 className={styles.mainTitle}>Design partner for fast growing SaaS & tech startups</h1>
+        <h1 className={styles.mainTitle}>
+          Design partner for fast <span className={styles.highlightText}>growing SaaS & tech</span> startups
+        </h1>
 
         <p className={styles.mainDescription}>
           We've designed 40+ products, websites, and brands for startups from early-stage to Enterprises.

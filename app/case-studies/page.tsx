@@ -3,7 +3,6 @@ import Header from "../components/Header/header";
 import styles from "./CaseStudyPage.module.css";
 
 const cases = [
-
   {
     id: 1,
     title: "Clarion Calls",
@@ -42,7 +41,7 @@ const cases = [
     brandLogo: "/images/Comfycozy.png",
     quote: "Rushweb Studio creative team brought our product to life. Their branding strategy helped us stand out in a crowded market.",
     author: "Michael Rodriguez",
-    role: "Marketoring Head"
+    role: "Marketing Head"
   },
   {
     id: 5,
@@ -58,41 +57,36 @@ const cases = [
     title: "Music City",
     caseImage: "/images/case-5.png",
     testimonialImage: "/images/testimonial8.webp",
-    brandLogo: "/images/streetEats.png",
     quote: "The design team understood our vision perfectly. The new interface is not only beautiful but has significantly improved our user retention.",
-    author: "James Wilson",
+    author: "Daniel Lee",
     role: "Lead Manager"
   },
   {
     id: 7,
     title: "Jonnie",
     caseImage: "/images/case-6.png",
-    testimonialImage: "/images/testimonail3.png",
-    brandLogo: "/images/carlon.png",
-    quote: "Professional, fast, and creative. They transformed our messy dashboard into a clean and intuitive Website for our entire global team.",
-    author: "Michael Chen",
-    role: "Lead Developer"
+    testimonialImage: "/images/testimonial3.webp",
+    quote: "Rushweb Studio is amazing! They completely overhauled our workflow and the new website performance is incredible. Highly professional team.",
+    author: "Sophia Martinez",
+    role: "Content Strategist"
   },
-
   {
     id: 8,
     title: "Music City",
     caseImage: "/images/case-8.png",
-    testimonialImage: "/images/testimonail2.png",
-    brandLogo: "/images/streetEats.png",
+    testimonialImage: "/images/testimonail10.avif",
     quote: "The design team understood our vision perfectly. The new interface is not only beautiful but has significantly improved our user retention.",
-    author: "Sarah Jenkins",
+    author: "Olivia Brown",
     role: "Marketing Director"
   },
   {
     id: 9,
     title: "Jonnie",
     caseImage: "/images/case-9.png",
-    testimonialImage: "/images/testimonail3.png",
-    brandLogo: "/images/carlon.png",
+    testimonialImage: "/images/testimonial3.webp",
     quote: "Professional, fast, and creative. They transformed our messy dashboard into a clean and intuitive Website for our entire global team.",
-    author: "Michael Chen",
-    role: "Lead Developer"
+    author: "Sara Jhonson",
+    role: "Developer @co-Founder"
   }
 ];
 
@@ -131,9 +125,11 @@ export default function CaseStudies() {
                             <span>{item.role}</span>
                           </div>
                         </div>
-                        <div className={styles.brandLogo}>
-                          <img src={item.brandLogo} className={styles.logoIcon} alt="Logo" />
-                        </div>
+                        {item.brandLogo && (
+                          <div className={styles.brandLogo}>
+                            <img src={item.brandLogo} className={styles.logoIcon} alt="Logo" />
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
