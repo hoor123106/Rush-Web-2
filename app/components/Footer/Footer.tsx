@@ -1,10 +1,12 @@
+"use client";
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.css';
+import { Facebook, Instagram, Linkedin, X } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <div className={styles.footerWrapper}>
+    <footer className={styles.footerWrapper}>
       <div className={styles.contentSection}>
         <div className={styles.brandGroup}>
           <Image
@@ -24,8 +26,8 @@ export default function Footer() {
         <div className={styles.ctaBox}>
           <h2 className={styles.ctaText}>
             Have an idea in<br />
-            mind?
-            <Link href="/contact" className={`${styles.whiteText} ${styles.underline} ${styles.ctaLink}`}>
+            mind?{" "}
+            <Link href="/contact" className={styles.ctaLink}>
               Let&apos;s talk.
             </Link>
           </h2>
@@ -35,32 +37,26 @@ export default function Footer() {
       <hr className={styles.hr} />
 
       <div className={styles.bottomSection}>
-
         <div className={styles.copyright}>
           Copyright 2026 © Rush Web Studio Design 2026. All Rights Reserved
         </div>
 
-        <div className={styles.socials}>
-          <div className={styles.circle}>
-            <Image
-              src="/images/instagram.png"
-              alt="Instagram"
-              width={24}
-              height={24}
-              className={styles.socialIcon}
-            />
-          </div>
-          <div className={styles.circle}>
-            <Image
-              src="/images/likedin.png"
-              alt="LinkedIn"
-              width={24}
-              height={24}
-              className={styles.socialIcon}
-            />
-          </div>
+        <div className={styles.FooterIcons}>
+          <Link href="https://x.com" aria-label="X">
+            {/* <X size={18} color="#1a1a1a" /> */}
+            <img src="/images/Twitter.svg" alt="" />
+          </Link>
+          <Link href="https://instagram.com" className={styles.socialButton} aria-label="Instagram">
+            <Instagram size={18} className={styles.socialIcon} />
+          </Link>
+          <Link href="https://facebook.com" className={styles.socialButton} aria-label="Facebook">
+            <Facebook size={18} className={styles.socialIcon} />
+          </Link>
+          <Link href="https://linkedin.com" className={styles.socialButton} aria-label="LinkedIn">
+            <Linkedin size={18} className={styles.socialIcon} />
+          </Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

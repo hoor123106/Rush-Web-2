@@ -144,6 +144,13 @@
   white-space: nowrap;
 }
 
+.ShowcaseprimaryButton:hover {
+  background: #FFF9F5;
+  border-color: #790808;
+  color: #000000;
+  border: 1px solid #790808;
+}
+
 @media (max-width: 850px) {
   .grid {
     grid-template-columns: 1fr;

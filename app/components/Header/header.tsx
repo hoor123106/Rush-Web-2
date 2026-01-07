@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Instagram, Facebook } from "lucide-react"
+import { Menu, X as CloseIcon, Instagram, Facebook, X, Linkedin } from "lucide-react"
 import styles from "./Header.module.css"
 import Image from "next/image"
 
@@ -15,6 +15,7 @@ export default function Header() {
     if (callToAction) {
       callToAction.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -24,8 +25,6 @@ export default function Header() {
       document.body.style.overflow = "unset"
     }
   }, [isOpen])
-
-
 
   return (
     <header className={styles.header}>
@@ -44,36 +43,31 @@ export default function Header() {
         </div>
 
         <div className={styles.navRight}>
-          <Link href="/case-studies" className={styles.navLink}>
-            Cases
-          </Link>
+          <Link href="/case-studies" className={styles.navLink}>Work</Link>
 
-          <button className={styles.navLink}>
-            <span>Resources</span>
-            <span className={styles.badge}>new</span>
-          </button>
-
-          <Link href="https://x.com" aria-label="X">
-            <img src="/images/Twitter.svg" alt="X" className={styles.socialIconImg} />
+          <Link href="https://x.com" className={styles.socialButton} aria-label="X">
+            <X size={18} className={styles.socialIcon} />
           </Link>
 
           <Link href="https://instagram.com" className={styles.socialButton} aria-label="Instagram">
-            <Instagram size={20} color="#1a1a1a" />
+            <Instagram size={18} className={styles.socialIcon} />
           </Link>
 
           <Link href="https://facebook.com" className={styles.socialButton} aria-label="Facebook">
-            <Facebook size={20} color="#1a1a1a" />
+            <Facebook size={18} className={styles.socialIcon} />
           </Link>
 
-          <button className={styles.primaryButton}>
-            <span onClick={scrollToCall} className={styles.buttonText}>Book call with Rush</span>
+          <Link href="https://linkedin.com" className={styles.socialButton} aria-label="LinkedIn">
+            <Linkedin size={18} className={styles.socialIcon} />
+          </Link>
+
+          <button className={styles.primaryButton} onClick={scrollToCall}>
+            <Image src="/images/calender.webp" alt="Calendar" width={20} height={20} className={styles.buttonIcon} />
+            <span className={styles.buttonText}>Book call with Rush</span>
           </button>
         </div>
 
-        <button
-          className={styles.hamburger}
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        <button className={styles.hamburger} onClick={() => setIsOpen(!isOpen)}>
           <AnimatePresence mode="wait">
             <motion.div
               key={isOpen ? "close" : "open"}
@@ -82,7 +76,7 @@ export default function Header() {
               exit={{ opacity: 0, rotate: 90 }}
               transition={{ duration: 0.2 }}
             >
-              {isOpen ? <X size={28} color="#4E0109" /> : <Menu size={28} color="#4E0109" />}
+              {isOpen ? <CloseIcon size={28} color="#4E0109" /> : <Menu size={28} color="#4E0109" />}
             </motion.div>
           </AnimatePresence>
         </button>
@@ -91,38 +85,29 @@ export default function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
             className={styles.mobileMenu}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1, duration: 0.2 }}
-              className={styles.mobileContentWrapper}
-            >
+            <div className={styles.mobileContentWrapper}>
               <div className={styles.mobileLinks}>
                 <Link href="/case-studies" className={styles.mobileNavLink} onClick={() => setIsOpen(false)}>
-                  Cases
+                  Work
                 </Link>
-                <button className={styles.mobileNavLink}>
-                  <span>Resources</span>
-                  <span className={styles.badge}>new</span>
-                </button>
               </div>
 
               <div className={styles.mobileActionButtons}>
                 <button className={styles.mobileChatButton}>
-                  Lets Chat <img src="/images/Twitter.svg" alt="X" className={styles.smallIcon} />
+                  Lets Chat <Linkedin size={20} color="#1a1a1a" />
                 </button>
-
-                <button className={styles.mobileFounderButton}>
-                  Talk to Founder
+                <button className={styles.mobileFounderButton} onClick={scrollToCall}>
+                  <Image src="/images/calender.webp" alt="Calendar" width={18} height={18} className={styles.mobileIcon} />
+                  <span>Talk to Founder</span>
                 </button>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

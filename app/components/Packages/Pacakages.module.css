@@ -190,12 +190,12 @@
 
 .featuresList::-webkit-scrollbar-button:single-button:vertical:decrement {
   background-position: center bottom;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23080838'><polygon points='50,0 0,100 100,100'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%234e0109'><polygon points='50,0 0,100 100,100'/></svg>");
 }
 
 .featuresList::-webkit-scrollbar-button:single-button:vertical:increment {
   background-position: center top;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23080838'><polygon points='0,0 100,0 50,100'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%234e0109'><polygon points='0,0 100,0 50,100'/></svg>");
 }
 
 .featureItem {
@@ -221,29 +221,52 @@
 }
 
 .buttonDark {
-  width: 100%;
-  max-width: 250px;
-  height: 46px;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  background-color: #7d1d1d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   border-radius: 8px;
-  border: none;
+  height: 48px;
+  padding: 0 24px;
+  font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid #790808;
+  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #040404 0%, #500109 50%, #040404 100%);
+  color: #ffffff;
+  width: 100%;
+}
+
+.buttonDark:hover {
+  background: #FFF9F5;
+  border-color: #790808;
+  color: #000000;
+}
+
+.buttonOutline:hover {
+  background: linear-gradient(90deg, #040404 0%, #500109 50%, #040404 100%);
+  color: #ffffff;
+  border-color: transparent;
 }
 
 .buttonOutline {
-  width: 100%;
-  max-width: 250px;
-  height: 46px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #3d0f0f;
-  background-color: white;
-  border: 1px solid #790808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   border-radius: 8px;
+  height: 48px;
+  padding: 0 24px;
+  font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid #790808;
+  transition: all 0.3s ease;
+  background: white;
+  color: black;
+  width: 100%;
+
 }
 
 @media (min-width: 1024px) {

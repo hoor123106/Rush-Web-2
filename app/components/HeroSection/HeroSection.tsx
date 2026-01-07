@@ -37,7 +37,6 @@ export default function Hero() {
     { id: 4, src: "/images/project-4.png", color: "#5853FC" },
     { id: 5, src: "/images/project-5.png", color: "#FFE68E" },
     { id: 6, src: "/images/project-6.png", color: "#759583" },
-    { id: 7, src: "/images/project-7.png", color: "#BD5FEC" },
     { id: 8, src: "/images/Project-8.png", color: "red" },
   ]
 
@@ -64,11 +63,18 @@ export default function Hero() {
 
         <div className={styles.buttonGroup}>
           <button className={styles.primaryButton} onClick={scrollToCall}>
-            <span>Book a call with Rush</span>
+            <Image
+              src="/images/calender.webp"
+              alt="Calendar"
+              width={20}
+              height={20}
+              className={styles.buttonIcon}
+            />
+            <span className={styles.buttonText}>Book a call with Rush</span>
           </button>
           <button className={styles.secondaryButton} onClick={scrollToCall}>
             <Image src="/images/mail.png" alt="Mail" width={20} height={20} />
-            <span>Quick Mail</span>
+            <span>Contact Now</span>
           </button>
         </div>
 
@@ -78,15 +84,15 @@ export default function Hero() {
 
         <div className={styles.testimonialCard}>
           <p className={styles.testimonialText}>
-            "Working with them has been effortless. They're sharp, proactive, and genuinely invested in our success. From UX ideas to technical implementation, they've nailed every detail."
+            "Since partnering with Rushweb Studio , our online sales have increased by 40%. Their SEO and PPC strategies have been incredibly effective in driving qualified traffic to our website."
           </p>
           <div className={styles.authorArea}>
             <div className={styles.authorAvatar}>
               <Image src="/images/testimonial5.webp" alt="Anton" width={48} height={48} className={styles.avatarImg} />
             </div>
             <div className={styles.authorInfo}>
-              <div className={styles.authorName}>Anton</div>
-              <div className={styles.authorTitle}>Founder sonora, ex-PM of salesforce</div>
+              <div className={styles.authorName}>Sarah Jhonson</div>
+              <div className={styles.authorTitle}>E-commerce Manager</div>
             </div>
           </div>
         </div>
