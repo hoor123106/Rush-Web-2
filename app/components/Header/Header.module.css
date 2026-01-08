@@ -76,9 +76,6 @@
   color: white !important;
 }
 
-.primaryButton:hover {
-  opacity: 0.9;
-}
 
 .hamburger {
   display: none;

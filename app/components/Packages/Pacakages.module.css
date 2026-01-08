@@ -238,18 +238,6 @@
   width: 100%;
 }
 
-.buttonDark:hover {
-  background: #FFF9F5;
-  border-color: #790808;
-  color: #000000;
-}
-
-.buttonOutline:hover {
-  background: linear-gradient(90deg, #040404 0%, #500109 50%, #040404 100%);
-  color: #ffffff;
-  border-color: transparent;
-}
-
 .buttonOutline {
   display: flex;
   align-items: center;

@@ -109,18 +109,6 @@
   color: #000000;
 }
 
-.primaryButton:hover {
-  background: #FFF9F5;
-  border-color: #790808;
-  color: #000000;
-}
-
-.secondaryButton:hover {
-  background: linear-gradient(90deg, #040404 0%, #500109 50%, #040404 100%);
-  color: #ffffff;
-  border-color: transparent;
-}
-
 .marqueeWrapper {
   margin-top: -10px;
   margin-bottom: -15px;

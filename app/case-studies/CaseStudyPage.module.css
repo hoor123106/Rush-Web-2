@@ -132,6 +132,27 @@
   gap: 12px;
 }
 
+.mainTitle {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: sans-serif;
+  letter-spacing: -0.04em;
+  color: #3d0309;
+
+  /* Alignment changes */
+  text-align: center;
+  /* Text ko center karne ke liye */
+  margin: 4rem auto;
+  /* Top/Bottom 4rem aur Left/Right auto (center) */
+  width: 100%;
+  /* Ensure karega ke text full width le */
+}
+
+.highlightText {
+  color: #b5a896;
+}
+
 .avatar {
   width: 35px;
   height: 35px;
