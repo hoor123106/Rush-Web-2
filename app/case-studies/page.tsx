@@ -97,7 +97,7 @@ export default function CaseStudies() {
       <section className={styles.section}>
         <div className={styles.caseContainer}>
           <h1 className={styles.mainTitle}>
-            Our <span className={styles.highlightText}>Case Studies</span>
+            Our <span className={styles.highlightText}>Case</span> Studies
           </h1>
           <div className={styles.cardsContainer}>
             {cases.map((item) => (
