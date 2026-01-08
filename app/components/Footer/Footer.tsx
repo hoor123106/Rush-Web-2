@@ -26,10 +26,10 @@ export default function Footer() {
         <div className={styles.ctaBox}>
           <h2 className={styles.ctaText}>
             Have an idea in<br />
-            mind?{" "}
-            <Link href="/contact" className={styles.ctaLink}>
+            mind?
+            <button className={styles.ctaLink}>
               Let&apos;s talk.
-            </Link>
+            </button>
           </h2>
         </div>
       </div>

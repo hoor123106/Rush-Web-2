@@ -58,7 +58,7 @@ export default function Hero() {
         </h1>
 
         <p className={styles.mainDescription}>
-          We've designed 40+ products, websites, and brands for startups from early-stage to Enterprises.
+          We've designed 40+ high-growth products and brands, transforming early-stage visions into enterprise-grade digital experiences.
         </p>
 
         <div className={styles.buttonGroup}>
