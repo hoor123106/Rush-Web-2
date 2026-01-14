@@ -22,71 +22,48 @@
   color: #c9b49a;
 }
 
-.dropdownWrapper {
+.categoriesWrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
   margin-bottom: 48px;
 }
 
-.dropdownContainer {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdownButton {
+.filterButtonsContainer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px 24px;
-  background-color: white;
-  color: #B31F2D;
-  border: 2px solid #B31F2D;
-  border-radius: 23px;
-  font-size: 20px;
-  font-weight: 600;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filterButton {
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1px solid #6b7280;
+  background-color: transparent;
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  width: 248px;
-  height: 47px;
+  transition: all 0.2s;
+  white-space: nowrap;
 }
 
-.arrow {
-  transition: transform 0.2s;
-  flex-shrink: 0;
+.filterButton:hover {
+  border-color: #374151;
+  color: #374151;
 }
 
-.arrowOpen {
-  transform: rotate(180deg);
+.filterButtonActive {
+  background-color: #1a1a1a;
+  color: white;
+  border-color: #1a1a1a;
 }
 
-.dropdownMenu {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  z-index: 10;
-  overflow: hidden;
-}
-
-.dropdownItem {
-  width: 100%;
-  padding: 12px 20px;
-  text-align: left;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 700;
-  color: #3d0f0f;
-}
-
-.dropdownItemActive {
-  background-color: #fef2f2;
-  color: #dc2626;
+.filterButtonActive:hover {
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .cardsGrid {
