@@ -70,13 +70,13 @@ export default function DesignShowcase() {
         <div className={styles.ShowcasebuttonGroup}>
           <button className={styles.ShowcaseprimaryButton} onClick={scrollToCall}>
             <Image
-              src="/images/calender.webp"
-              alt="Google Meet"
+              src="/images/mail.png"
+              alt="Mail"
               width={20}
               height={20}
               className={styles.ShowcaseavatarSmall}
             />
-            <span>Book a call with Rush</span>
+            <span>Contact Now</span>
           </button>
         </div>
       </div>

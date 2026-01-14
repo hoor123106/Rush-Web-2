@@ -12,16 +12,16 @@ export default function Delivery() {
 
   const servicesData: Record<ServiceTab, { service: string; timeframe: string }[]> = {
     Websites: [
-      { service: "Landing page", timeframe: "1-2 weeks" },
-      { service: "Marketing website", timeframe: "3-6 weeks" },
-      { service: "E-commerce site", timeframe: "4-8 weeks" },
-      { service: "Website redesign", timeframe: "2-4 weeks" },
+      { service: "Landing Page", timeframe: "3 to 5 Days" },
+      { service: "Marketing Website", timeframe: "1 to 2 weeks" },
+      { service: "E-commerce Site", timeframe: "2 to 3 weeks" },
+      { service: "Website Redesign", timeframe: "1 to 2 weeks" },
     ],
     Branding: [
-      { service: "Brand identity", timeframe: "4-6 weeks" },
-      { service: "Logo design", timeframe: "1-2 weeks" },
-      { service: "Brand guidelines", timeframe: "2-3 weeks" },
-      { service: "Visual system", timeframe: "3-4 weeks" },
+      { service: "Brand Identity", timeframe: "3 to 5 Days" },
+      { service: "Logo Design", timeframe: "3 to 5 Days" },
+      { service: "Brand Guidelines", timeframe: "1 to 2 weeks" },
+      { service: "Visual System", timeframe: "1 to 2 weeks" },
     ],
   }
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import styles from "./Pacakages.module.css"
 
@@ -217,18 +217,6 @@ const servicePlans: Record<string, ServiceCategory> = {
 
 export default function PackagesSection() {
   const [selectedService, setSelectedService] = useState("websites")
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false)
-      }
-    }
-    if (isDropdownOpen) document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [isDropdownOpen])
 
   const activeCategory = servicePlans[selectedService]
 
@@ -239,34 +227,18 @@ export default function PackagesSection() {
           Rush Web Studio <span className={styles.headerAccent}>fixed packages.</span>
         </h1>
 
-        <div className={styles.dropdownWrapper}>
-          <div className={styles.dropdownContainer} ref={dropdownRef}>
-            <button className={styles.dropdownButton} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-              <span>{activeCategory.name}</span>
-              <svg
-                className={`${styles.arrow} ${isDropdownOpen ? styles.arrowOpen : ""}`}
-                width="20" height="20" viewBox="0 0 20 20" fill="none"
+        <div className={styles.categoriesWrapper}>
+        
+          <div className={styles.filterButtonsContainer}>
+            {Object.keys(servicePlans).map((key) => (
+              <button
+                key={key}
+                className={`${styles.filterButton} ${selectedService === key ? styles.filterButtonActive : ""}`}
+                onClick={() => setSelectedService(key)}
               >
-                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            {isDropdownOpen && (
-              <div className={styles.dropdownMenu}>
-                {Object.keys(servicePlans).map((key) => (
-                  <button
-                    key={key}
-                    className={`${styles.dropdownItem} ${selectedService === key ? styles.dropdownItemActive : ""}`}
-                    onClick={() => {
-                      setSelectedService(key)
-                      setIsDropdownOpen(false)
-                    }}
-                  >
-                    {servicePlans[key].name}
-                  </button>
-                ))}
-              </div>
-            )}
+                {servicePlans[key].name}
+              </button>
+            ))}
           </div>
         </div>
 

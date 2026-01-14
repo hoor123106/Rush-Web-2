@@ -50,13 +50,13 @@ export default function ProductUXPage() {
 
           <button className={styles.Productsbutton} onClick={scrollToCall}>
             <Image
-              src="/images/calender.webp"
-              alt="Calendar"
+              src="/images/mail.png"
+              alt="Mail"
               width={20}
               height={20}
               className={styles.buttonIcon}
             />
-            <span className={styles.buttonText}>Book a call with Rush</span>
+            <span className={styles.buttonText}>Contact Now</span>
           </button>
         </div>
       </div>
