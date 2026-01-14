@@ -6,7 +6,7 @@ import styles from "./CalendarSection.module.css";
 import ContactForm from "../Contact/Contact";
 
 export default function CalendarSection() {
-  const [activeTab, setActiveTab] = useState("calendar");
+  const [activeTab, setActiveTab] = useState("form");
 
   useEffect(() => {
     (async function () {
@@ -25,7 +25,7 @@ export default function CalendarSection() {
           Book a <span className={styles.redText}>call</span> or Fill the <span className={styles.goldText}>form</span>
         </h2>
 
-        <div className={styles.toggleWrapper}>
+        {/* <div className={styles.toggleWrapper}>
           <div className={styles.toggleContainer}>
             <button
               className={`${styles.toggleBtn} ${activeTab === "calendar" ? styles.active : ""}`}
@@ -40,7 +40,7 @@ export default function CalendarSection() {
               Form
             </button>
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.contentArea}>
           {activeTab === "calendar" ? (

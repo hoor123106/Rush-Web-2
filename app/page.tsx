@@ -19,7 +19,7 @@ export default function Home() {
     <Header />
     <Hero />
     <Delivery />
-    <ProductsUx />
+    {/* <ProductsUx /> */}
     <PackagesSection />
     <CaseStudies />
     <CaseStudyComponent />

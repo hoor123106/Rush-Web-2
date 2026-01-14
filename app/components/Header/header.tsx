@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X as CloseIcon, Instagram, Facebook, X, Linkedin } from "lucide-react"
+import { Menu, X as CloseIcon, Instagram, Facebook, X } from "lucide-react"
 import styles from "./Header.module.css"
 import Image from "next/image"
 
@@ -45,31 +45,27 @@ export default function Header() {
         <div className={styles.navRight}>
           <Link href="/case-studies" className={styles.navLink}>Work</Link>
 
-          <Link href="https://x.com" className={styles.socialButton} aria-label="X">
+          <Link href="https://x.com/rushwebstudios" className={styles.socialButton} aria-label="X">
             <X size={18} className={styles.socialIcon} />
           </Link>
 
-          <Link href="https://instagram.com" className={styles.socialButton} aria-label="Instagram">
+          <Link href="https://www.instagram.com/rushwebstudios/" className={styles.socialButton} aria-label="Instagram">
             <Instagram size={18} className={styles.socialIcon} />
           </Link>
 
-          <Link href="https://facebook.com" className={styles.socialButton} aria-label="Facebook">
+          <Link href="https://www.facebook.com/rushwebstudios/" className={styles.socialButton} aria-label="Facebook">
             <Facebook size={18} className={styles.socialIcon} />
-          </Link>
-
-          <Link href="https://linkedin.com" className={styles.socialButton} aria-label="LinkedIn">
-            <Linkedin size={18} className={styles.socialIcon} />
           </Link>
 
           <button className={styles.primaryButton} onClick={scrollToCall}>
             <Image
-              src="/images/calender.webp"
-              alt="Calendar"
+              src="/images/mail.png"
+              alt="Mail"
               width={20}
               height={20}
               className={styles.buttonIcon}
             />
-            <span className={styles.buttonText}>Book call with Rush</span>
+            <span className={styles.buttonText}>Contact Now</span>
           </button>
         </div>
 
@@ -106,7 +102,7 @@ export default function Header() {
 
               <div className={styles.mobileActionButtons}>
                 <button className={styles.mobileChatButton}>
-                  Lets Chat <Linkedin size={20} color="#1a1a1a" />
+                  Lets Chat
                 </button>
                 <button className={styles.mobileFounderButton} onClick={scrollToCall}>
                   <Image src="/images/calender.webp" alt="Calendar" width={18} height={18} />

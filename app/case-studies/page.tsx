@@ -136,9 +136,9 @@ export default function CaseStudies() {
                     </div>
                   </div>
                 </div>
-                <button className={styles.arrow} aria-label="View Case Study">
+                {/* <button className={styles.arrow} aria-label="View Case Study">
                   <img src="/images/ArrowUp.png" alt="arrow" />
-                </button>
+                </button> */}
               </div>
             ))}
           </div>

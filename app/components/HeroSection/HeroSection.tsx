@@ -62,16 +62,7 @@ export default function Hero() {
         </p>
 
         <div className={styles.buttonGroup}>
-          <button className={styles.primaryButton} onClick={scrollToCall}>
-            <Image
-              src="/images/calender.webp"
-              alt="Calendar"
-              width={20}
-              height={20}
-              className={styles.buttonIcon}
-            />
-            <span className={styles.buttonText}>Book a call with Rush</span>
-          </button>
+
           <button className={styles.secondaryButton} onClick={scrollToCall}>
             <Image src="/images/mail.png" alt="Mail" width={20} height={20} />
             <span>Contact Now</span>
